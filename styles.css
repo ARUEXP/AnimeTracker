@@ -114,7 +114,7 @@ button:hover {
 .anime-item {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 0 20px;
   border: 1px solid #ddd;
   border-radius: 8px; /* More rounded corners */
   position: relative; /* Add position: relative to the anime-item */
