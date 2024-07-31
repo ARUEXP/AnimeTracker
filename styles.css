@@ -226,8 +226,3 @@ form label:nth-child(7) {
   display: inline-block; /* Make elements inline-block for better alignment */
   vertical-align: top; /* Align elements to the top */
 }
-
-/* Add max gap between buttons */
-.edit-button {
-  margin-left: 20px; /* Add margin to the left of the edit button */
-}
