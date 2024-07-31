@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const animeList = document.getElementById("animeList");
   const importJsonButton = document.getElementById("importJsonButton"); // Get the button after DOM is ready
   const downloadButton = document.getElementById("downloadButton"); // Get the button after DOM is ready
-  const jsonFile = document.getElementById("jsonFile");
+  const jsonFile = document.getElementById("jsonFile"); // Get the file input after DOM is ready
 
   let animeData = []; // Array to store anime data
 
@@ -108,21 +108,24 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Event listener for file input change
-  jsonFile.addEventListener("change", (event) => {
-    const file = event.target.files[0];
-    const reader = new FileReader();
+  if (jsonFile) {
+    // Check if the file input exists
+    jsonFile.addEventListener("change", (event) => {
+      const file = event.target.files[0];
+      const reader = new FileReader();
 
-    reader.onload = (event) => {
-      try {
-        animeData = JSON.parse(event.target.result);
-        updateAnimeList();
-      } catch (error) {
-        console.error("Error parsing JSON:", error);
-      }
-    };
+      reader.onload = (event) => {
+        try {
+          animeData = JSON.parse(event.target.result);
+          updateAnimeList();
+        } catch (error) {
+          console.error("Error parsing JSON:", error);
+        }
+      };
 
-    reader.readAsText(file);
-  });
+      reader.readAsText(file);
+    });
+  }
 
   // Event listener for download button
   if (downloadButton) {

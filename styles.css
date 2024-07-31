@@ -109,7 +109,6 @@ button:hover {
   display: flex;
   flex-direction: column; /* Back to column direction */
   padding: 20px;
-  padding-top: 0px;
   border: 1px solid #ddd;
   border-radius: 8px; /* More rounded corners */
   background-color: #f8f8f8; /* Lighter background */
