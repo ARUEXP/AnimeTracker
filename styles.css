@@ -31,7 +31,6 @@ body {
 
 .container {
   width: 90%;
-  max-width: 1000px;
   margin: 20px auto; /* Increased top margin */
   padding: 20px; /* Increased padding */
   background: white;
@@ -297,7 +296,7 @@ form label:nth-child(7) {
 
 /* Shrink the first four form elements and titles */
 form > *:nth-child(-n + 4) {
-  width: 80%; /* Adjust the width as needed */
+  width: 100%; /* Adjust the width as needed */
 }
 
 form > *:nth-child(-n + 4) label {
