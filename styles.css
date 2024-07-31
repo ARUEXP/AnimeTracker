@@ -7,6 +7,10 @@
   font-weight: normal;
 }
 
+* {
+  font-family: "LemonMilk";
+}
+
 /* Hide the scrollbar track */
 ::-webkit-scrollbar {
   width: 0;
@@ -19,7 +23,6 @@
 }
 
 body {
-  font-family: "LemonMilk-Regular", sans-serif; /* Use LemonMilk-Regular font */
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
@@ -40,7 +43,6 @@ body {
 
 h1 {
   text-align: center;
-  font-family: "LemonMilk-Bold", sans-serif; /* Use LemonMilk-Bold font for h1 */
   font-size: 2.8rem; /* Larger font size */
   margin-bottom: 20px; /* Increased space below the heading */
 }
@@ -72,7 +74,6 @@ button {
   padding: 12px 15px; /* Increased padding */
   border: 1px solid #ddd;
   border-radius: 6px; /* Rounded corners */
-  font-family: "LemonMilk-Regular", sans-serif; /* Use LemonMilk-Regular font for inputs and buttons */
 }
 
 input,
@@ -118,7 +119,6 @@ button:hover {
 
 .anime-item h2 {
   margin: 0;
-  font-family: "LemonMilk-Bold", sans-serif; /* Use LemonMilk-Bold font for h2 */
   font-size: 1.8rem; /* Reduced font size of h2 */
 }
 
