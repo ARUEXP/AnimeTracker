@@ -1,6 +1,4 @@
 /* Import the LemonMilk font from Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=LemonMilk:wght@400;700&display=swap");
-
 @font-face {
   font-family: "LemonMilk";
   src: url("LEMONMILK-Light.otf");
@@ -134,7 +132,6 @@ button:hover {
   cursor: pointer;
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
   width: fit-content; /* Adjust width to fit content */
-  margin-bottom: 10px; /* Add margin to the bottom of the buttons */
 }
 
 .delete-button {
@@ -220,6 +217,7 @@ form label:nth-child(7) {
   display: inline-flex; /* Make elements inline-block for better alignment */
   vertical-align: top; /* Align elements to the top */
 }
+
 .delete-button {
   right: 10px; /* Position the button to the right */
 }
