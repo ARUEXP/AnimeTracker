@@ -217,11 +217,3 @@ form label:nth-child(7) {
   display: inline-flex; /* Make elements inline-block for better alignment */
   vertical-align: top; /* Align elements to the top */
 }
-
-.delete-button {
-  right: 10px; /* Position the button to the right */
-}
-
-.edit-button {
-  right: 60px; /* Position the button to the right */
-}

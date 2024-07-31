@@ -44,15 +44,14 @@ function addAnime(anime) {
     console.log("Edit button clicked for anime:", anime);
   });
 
+  animeList.appendChild(animeItem);
+  animeItem.appendChild(editButton);
+  animeItem.appendChild(deleteButton);
   animeItem.appendChild(animeName);
   animeItem.appendChild(watchedEpisodes);
   animeItem.appendChild(totalEpisodes);
   animeItem.appendChild(animeGenre);
   animeItem.appendChild(animeDescription);
-  animeItem.appendChild(deleteButton);
-  animeItem.appendChild(editButton);
-
-  animeList.appendChild(animeItem);
 }
 
 // Function to update the anime list
