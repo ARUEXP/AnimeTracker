@@ -107,7 +107,7 @@ button:hover {
 
 .anime-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Back to column direction */
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px; /* More rounded corners */
@@ -126,7 +126,7 @@ button:hover {
 
 .delete-button,
 .edit-button {
-  position: relative; /* Position the button relatively */
+  position: absolute; /* Position the button absolutely */
   top: 10px; /* Adjust vertical position as needed */
   padding: 5px 10px; /* Adjust padding as needed */
   background-color: #0000;
@@ -134,6 +134,7 @@ button:hover {
   cursor: pointer;
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
   width: fit-content; /* Adjust width to fit content */
+  margin-bottom: 10px; /* Add margin to the bottom of the buttons */
 }
 
 .delete-button {
@@ -191,13 +192,6 @@ form label {
   align-items: center;
 }
 
-form input:nth-child(1),
-form input:nth-child(3),
-form input:nth-child(5),
-form input:nth-child(7) {
-  margin-left: 10px;
-}
-
 /* Style for the placeholder text */
 form input:nth-child(1)::placeholder,
 form input:nth-child(3)::placeholder,
@@ -223,11 +217,13 @@ form label:nth-child(7) {
 .anime-item h2,
 .delete-button,
 .edit-button {
-  display: inline-block; /* Make elements inline-block for better alignment */
+  display: inline-flex; /* Make elements inline-block for better alignment */
   vertical-align: top; /* Align elements to the top */
 }
+.delete-button {
+  right: 10px; /* Position the button to the right */
+}
 
-/* Add max gap between buttons */
 .edit-button {
-  margin-left: 20px; /* Add margin to the left of the edit button */
+  right: 60px; /* Position the button to the right */
 }
