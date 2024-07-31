@@ -55,7 +55,6 @@ form {
   display: flex;
   justify-content: center; /* Center the buttons */
   margin-top: 30px; /* Adjust the margin as needed */
-  font-size: 1px;
 }
 
 .button-container button {
