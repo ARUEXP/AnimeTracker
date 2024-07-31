@@ -139,3 +139,21 @@ button:hover {
   background-color: #000;
   color: #fff;
 }
+
+.edit-button {
+  position: absolute; /* Position the button absolutely */
+  top: 10px; /* Adjust vertical position as needed */
+  right: 50px; /* Position the button to the right */
+  padding: 8px 12px; /* Adjust padding as needed */
+  background-color: #0000;
+  border: 1px solid #000;
+  color: #000;
+  border-radius: 50px; /* Make the button circular */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.edit-button:hover {
+  background-color: black;
+  color: white;
+}
