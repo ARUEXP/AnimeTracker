@@ -124,17 +124,22 @@ button:hover {
   margin: 8px 0;
 }
 
-.delete-button {
+.delete-button,
+.edit-button {
   position: absolute; /* Position the button absolutely */
   top: 10px; /* Adjust vertical position as needed */
-  right: 10px; /* Position the button to the right */
-  padding: 8px 12px; /* Adjust padding as needed */
+  padding: 5px 10px; /* Adjust padding as needed */
   background-color: #0000;
-  border: 1px solid #f00;
-  color: #f00;
-  border-radius: 50%; /* Make the button circular */
+  border-radius: 50px; /* Make the button circular */
   cursor: pointer;
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  width: fit-content; /* Adjust width to fit content */
+}
+
+.delete-button {
+  right: 10px; /* Position the button to the right */
+  border: 1px solid #f00;
+  color: #f00;
 }
 
 .delete-button:hover {
@@ -143,16 +148,9 @@ button:hover {
 }
 
 .edit-button {
-  position: absolute; /* Position the button absolutely */
-  top: 10px; /* Adjust vertical position as needed */
   right: 50px; /* Position the button to the right */
-  padding: 8px 12px; /* Adjust padding as needed */
-  background-color: #0000;
   border: 1px solid #000;
   color: #000;
-  border-radius: 50%; /* Make the button circular */
-  cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .edit-button:hover {
