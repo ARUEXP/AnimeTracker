@@ -27,6 +27,10 @@ function addAnime(anime) {
   const animeDescription = document.createElement("p");
   animeDescription.textContent = `Description: ${anime.description}`;
 
+  // Create a container for the buttons
+  const buttonContainer = document.createElement("div");
+  buttonContainer.classList.add("button-container");
+
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("delete-button");
   deleteButton.textContent = "Delete";
@@ -44,14 +48,19 @@ function addAnime(anime) {
     console.log("Edit button clicked for anime:", anime);
   });
 
-  animeList.appendChild(animeItem);
-  animeItem.appendChild(editButton);
-  animeItem.appendChild(deleteButton);
+  // Append buttons to the container
+  buttonContainer.appendChild(deleteButton);
+  buttonContainer.appendChild(editButton);
+
+  // Append elements to the anime item
+  animeItem.appendChild(buttonContainer);
   animeItem.appendChild(animeName);
   animeItem.appendChild(watchedEpisodes);
   animeItem.appendChild(totalEpisodes);
   animeItem.appendChild(animeGenre);
   animeItem.appendChild(animeDescription);
+
+  animeList.appendChild(animeItem);
 }
 
 // Function to update the anime list
