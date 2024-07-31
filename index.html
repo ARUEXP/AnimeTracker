@@ -11,17 +11,19 @@
       <h1>Anime Tracker</h1>
 
       <form id="animeForm">
-        <label for="animeName">Anime Name:</label>
-        <input type="text" id="animeName" required />
+        <div class="input-grid">
+          <label for="animeName">Anime Name:</label>
+          <input type="text" id="animeName" required />
 
-        <label for="watchedEpisodes">Watched Episodes:</label>
-        <input type="number" id="watchedEpisodes" min="0" required />
+          <label for="watchedEpisodes">Watched Episodes:</label>
+          <input type="number" id="watchedEpisodes" min="0" required />
 
-        <label for="totalEpisodes">Total Episodes:</label>
-        <input type="number" id="totalEpisodes" min="1" required />
+          <label for="totalEpisodes">Total Episodes:</label>
+          <input type="number" id="totalEpisodes" min="1" required />
 
-        <label for="animeGenre">Genre:</label>
-        <input type="text" id="animeGenre" required />
+          <label for="animeGenre">Genre:</label>
+          <input type="text" id="animeGenre" required />
+        </div>
 
         <label for="animeDescription">Description:</label>
         <textarea id="animeDescription" rows="4" required></textarea>
