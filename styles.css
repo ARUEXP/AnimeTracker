@@ -127,14 +127,15 @@ button:hover {
   top: 10px; /* Adjust vertical position as needed */
   right: 10px; /* Position the button to the right */
   padding: 8px 12px; /* Adjust padding as needed */
-  background-color: #dc3545; /* Example red background color */
-  color: white;
-  border: none;
+  background-color: #0000;
+  border: 1px solid #000;
+  color: #000;
   border-radius: 50px; /* Make the button circular */
   cursor: pointer;
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .delete-button:hover {
-  background-color: #c82333; /* Darker red on hover */
+  background-color: black;
+  color: white;
 }
