@@ -48,15 +48,18 @@ form {
   display: flex;
   flex-direction: column;
   gap: 25px; /* Increased spacing between form fields */
+  /* Center the form content */
+  align-items: center;
 }
 
-.button-container {
+/* Main button container */
+.main-button-container {
   display: flex;
   justify-content: center; /* Center the buttons */
   margin-top: 30px; /* Adjust the margin as needed */
 }
 
-.button-container button {
+.main-button-container button {
   margin: 0 15px; /* Adjust the margin as needed */
   padding: 10px 20px;
   border-radius: 8px; /* More rounded corners */
@@ -106,9 +109,9 @@ button:hover {
   display: flex;
   flex-direction: column; /* Back to column direction */
   padding: 20px;
+  padding-top: 0px;
   border: 1px solid #ddd;
   border-radius: 8px; /* More rounded corners */
-  position: relative; /* Add position: relative to the anime-item */
   background-color: #f8f8f8; /* Lighter background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More prominent shadow */
 }
@@ -121,14 +124,17 @@ button:hover {
   margin: 8px 0;
 }
 
-.button-container {
+/* Buttons within anime items */
+.anime-item-button-container {
   display: flex;
+  align-items: center; /* Align items vertically */
   position: relative;
   right: 10px;
 }
 
-.delete-button,
-.edit-button {
+/* Main buttons */
+.main-delete-button,
+.main-edit-button {
   background-color: #0000;
   border-radius: 50px; /* Make the button circular */
   cursor: pointer;
@@ -137,24 +143,57 @@ button:hover {
   display: inline-block; /* Make the buttons inline-block */
 }
 
-.delete-button {
+.main-delete-button {
   border: 1px solid #f00;
   color: #f00;
 }
 
-.delete-button:hover {
+.main-delete-button:hover {
   border: 1px solid #000;
   background-color: #000;
   color: #fff;
 }
 
-.edit-button {
+.main-edit-button {
   margin-left: 10px;
   border: 1px solid #000;
   color: #000;
 }
 
-.edit-button:hover {
+.main-edit-button:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Anime item buttons */
+.anime-item-delete-button,
+.anime-item-edit-button {
+  background-color: #0000;
+  border-radius: 50px; /* Make the button circular */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  width: fit-content; /* Adjust width to fit content */
+  display: inline-block; /* Make the buttons inline-block */
+}
+
+.anime-item-delete-button {
+  border: 1px solid #f00;
+  color: #f00;
+}
+
+.anime-item-delete-button:hover {
+  border: 1px solid #000;
+  background-color: #000;
+  color: #fff;
+}
+
+.anime-item-edit-button {
+  margin-left: 10px;
+  border: 1px solid #000;
+  color: #000;
+}
+
+.anime-item-edit-button:hover {
   background-color: black;
   color: white;
 }
@@ -188,14 +227,14 @@ button:hover {
     flex-direction: column; /* Stack elements vertically */
   }
 
-  .button-container {
+  .main-button-container {
     display: flex;
     flex-direction: column; /* Stack buttons vertically */
     align-items: flex-end; /* Align buttons to the right */
   }
 
-  .delete-button,
-  .edit-button {
+  .main-delete-button,
+  .main-edit-button {
     margin-bottom: 5px; /* Add space between buttons */
   }
 }
@@ -224,23 +263,43 @@ form label:nth-child(7) {
 }
 
 /* Style for the anime item content */
-.anime-item > *:not(.delete-button):not(.edit-button) {
+.anime-item > *:not(.anime-item-delete-button):not(.anime-item-edit-button) {
   margin-bottom: 10px; /* Add margin to the bottom of content elements */
 }
 
 /* Align buttons with anime name */
 .anime-item h2,
-.delete-button,
-.edit-button {
+.anime-item-delete-button,
+.anime-item-edit-button {
   display: inline-block; /* Make elements inline-block for better alignment */
-  vertical-align: top; /* Align elements to the top */
 }
 
-.delete-button {
+.anime-item-delete-button {
   right: 10px; /* Position the button to the right */
 }
 
-.edit-button {
+.anime-item-edit-button {
   margin-left: 10px;
   right: 60px; /* Position the button to the right */
+}
+
+/* Center the import and download buttons */
+.import-download-buttons {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  margin-top: 20px; /* Add some top margin */
+}
+
+.import-download-buttons button {
+  margin: 0 10px; /* Add some space between buttons */
+}
+
+/* Shrink the first four form elements and titles */
+form > *:nth-child(-n + 4) {
+  width: 80%; /* Adjust the width as needed */
+}
+
+form > *:nth-child(-n + 4) label {
+  width: 100%; /* Make labels take full width */
+  text-align: left; /* Align label text to the left */
 }
