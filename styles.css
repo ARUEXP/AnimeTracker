@@ -214,10 +214,7 @@ button:hover {
   }
 
   .anime-list {
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(150px, 1fr)
-    ); /* Adjust grid column width for smaller screens */
+    grid-template-columns: 1fr; /* Adjust grid column width for smaller screens */
   }
 
   .input-grid {
