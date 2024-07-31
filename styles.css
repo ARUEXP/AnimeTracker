@@ -206,6 +206,9 @@ button:hover {
 }
 
 /* Responsive Design */
+/* ... (Existing CSS) ... */
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .container {
     width: 95%;
@@ -238,6 +241,8 @@ button:hover {
     margin-bottom: 5px; /* Add space between buttons */
   }
 }
+
+/* ... (Rest of the CSS) ... */
 
 /* Style for the form inputs */
 form label {
