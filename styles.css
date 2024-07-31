@@ -126,7 +126,7 @@ button:hover {
 
 .delete-button,
 .edit-button {
-  position: absolute; /* Position the button absolutely */
+  position: relative; /* Position the button relatively */
   top: 10px; /* Adjust vertical position as needed */
   padding: 5px 10px; /* Adjust padding as needed */
   background-color: #0000;
@@ -148,7 +148,7 @@ button:hover {
 }
 
 .edit-button {
-  right: 50px; /* Position the button to the right */
+  right: 60px; /* Position the button to the right */
   border: 1px solid #000;
   color: #000;
 }
@@ -225,4 +225,9 @@ form label:nth-child(7) {
 .edit-button {
   display: inline-block; /* Make elements inline-block for better alignment */
   vertical-align: top; /* Align elements to the top */
+}
+
+/* Add max gap between buttons */
+.edit-button {
+  margin-left: 20px; /* Add margin to the left of the edit button */
 }
