@@ -10,22 +10,29 @@
     <div class="container">
       <h1>AniTrack</h1>
       <form id="animeForm">
-        <input type="text" id="animeName" placeholder="Anime Name" required />
-        <input
-          type="number"
-          id="watchedEpisodes"
-          placeholder="Watched Episodes"
-          min="0"
-          required
-        />
-        <input
-          type="number"
-          id="totalEpisodes"
-          placeholder="Total Episodes"
-          min="1"
-          required
-        />
-        <input type="text" id="animeGenre" placeholder="Genre" required />
+        <div class="input-grid">
+          <label for="animeName">Anime Name:</label>
+          <input type="text" id="animeName" placeholder="Anime Name" required />
+          <label for="watchedEpisodes">Watched Episodes:</label>
+          <input
+            type="number"
+            id="watchedEpisodes"
+            placeholder="Watched Episodes"
+            min="0"
+            required
+          />
+          <label for="totalEpisodes">Total Episodes:</label>
+          <input
+            type="number"
+            id="totalEpisodes"
+            placeholder="Total Episodes"
+            min="1"
+            required
+          />
+          <label for="animeGenre">Genre:</label>
+          <input type="text" id="animeGenre" placeholder="Genre" required />
+        </div>
+        <label for="animeDescription">Short Description:</label>
         <textarea
           id="animeDescription"
           placeholder="Short Description"

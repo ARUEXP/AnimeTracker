@@ -132,7 +132,7 @@ button:hover {
   background-color: #0000;
   border: 1px solid #f00;
   color: #f00;
-  border-radius: 50px; /* Make the button circular */
+  border-radius: 50%; /* Make the button circular */
   cursor: pointer;
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
@@ -150,7 +150,7 @@ button:hover {
   background-color: #0000;
   border: 1px solid #000;
   color: #000;
-  border-radius: 50px; /* Make the button circular */
+  border-radius: 50%; /* Make the button circular */
   cursor: pointer;
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
@@ -184,4 +184,34 @@ button:hover {
     grid-template-columns: 1fr; /* Stack input fields vertically on smaller screens */
     grid-template-rows: 1fr 1fr 1fr 1fr; /* Adjust rows for stacked input fields */
   }
+}
+
+/* Style for the form inputs */
+form label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+form input:nth-child(1),
+form input:nth-child(3),
+form input:nth-child(5),
+form input:nth-child(7) {
+  margin-left: 10px;
+}
+
+/* Style for the placeholder text */
+form input:nth-child(1)::placeholder,
+form input:nth-child(3)::placeholder,
+form input:nth-child(5)::placeholder,
+form input:nth-child(7)::placeholder {
+  color: #999; /* Light gray color for placeholder text */
+}
+
+/* Style for the labels */
+form label:nth-child(1),
+form label:nth-child(3),
+form label:nth-child(5),
+form label:nth-child(7) {
+  text-align: left; /* Align the label text to the left */
 }

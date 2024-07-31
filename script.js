@@ -1,14 +1,69 @@
+// script.js
 const animeForm = document.getElementById("animeForm");
 const animeList = document.getElementById("animeList");
+const importJsonButton = document.getElementById("importJsonButton");
+const downloadButton = document.getElementById("downloadButton");
+const jsonFile = document.getElementById("jsonFile");
 
-let animeData = [];
+let animeData = []; // Array to store anime data
 
-// Load anime data from local storage
-loadAnimeData();
+// Function to add anime to the list
+function addAnime(anime) {
+  const animeItem = document.createElement("div");
+  animeItem.classList.add("anime-item");
 
-// Add anime to the list
+  const animeName = document.createElement("h2");
+  animeName.textContent = anime.name;
+
+  const watchedEpisodes = document.createElement("p");
+  watchedEpisodes.textContent = `Watched Episodes: ${anime.watchedEpisodes}`;
+
+  const totalEpisodes = document.createElement("p");
+  totalEpisodes.textContent = `Total Episodes: ${anime.totalEpisodes}`;
+
+  const animeGenre = document.createElement("p");
+  animeGenre.textContent = `Genre: ${anime.genre}`;
+
+  const animeDescription = document.createElement("p");
+  animeDescription.textContent = `Description: ${anime.description}`;
+
+  const deleteButton = document.createElement("button");
+  deleteButton.classList.add("delete-button");
+  deleteButton.textContent = "Delete";
+  deleteButton.addEventListener("click", () => {
+    // Remove anime from the array and update the list
+    animeData = animeData.filter((item) => item !== anime);
+    updateAnimeList();
+  });
+
+  const editButton = document.createElement("button");
+  editButton.classList.add("edit-button");
+  editButton.textContent = "Edit";
+  editButton.addEventListener("click", () => {
+    // Implement edit functionality (e.g., open a modal to edit anime details)
+    console.log("Edit button clicked for anime:", anime);
+  });
+
+  animeItem.appendChild(animeName);
+  animeItem.appendChild(watchedEpisodes);
+  animeItem.appendChild(totalEpisodes);
+  animeItem.appendChild(animeGenre);
+  animeItem.appendChild(animeDescription);
+  animeItem.appendChild(deleteButton);
+  animeItem.appendChild(editButton);
+
+  animeList.appendChild(animeItem);
+}
+
+// Function to update the anime list
+function updateAnimeList() {
+  animeList.innerHTML = ""; // Clear the existing list
+  animeData.forEach((anime) => addAnime(anime));
+}
+
+// Event listener for form submission
 animeForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+  event.preventDefault(); // Prevent default form submission
 
   const animeName = document.getElementById("animeName").value;
   const watchedEpisodes = parseInt(
@@ -22,127 +77,49 @@ animeForm.addEventListener("submit", (event) => {
 
   const newAnime = {
     name: animeName,
-    watched: watchedEpisodes,
-    total: totalEpisodes,
+    watchedEpisodes: watchedEpisodes,
+    totalEpisodes: totalEpisodes,
     genre: animeGenre,
     description: animeDescription,
   };
 
   animeData.push(newAnime);
-  saveAnimeData();
-  displayAnimeList(animeData);
-
-  // Clear the form after submission
-  animeForm.reset();
+  updateAnimeList();
+  animeForm.reset(); // Reset the form after submission
 });
 
-// Display anime list
-function displayAnimeList(animeData) {
-  animeList.innerHTML = ""; // Clear previous list
+// Event listener for import JSON button
+importJsonButton.addEventListener("click", () => {
+  jsonFile.click(); // Trigger the file input
+});
 
-  animeData.forEach((anime, index) => {
-    const animeItem = document.createElement("div");
-    animeItem.classList.add("anime-item");
-    animeItem.innerHTML = `
-      <h2>${anime.name}</h2>
-      <p>Watched: ${anime.watched} / ${anime.total} Episodes</p>
-      <p>Genre: ${anime.genre}</p>
-      <p>${anime.description}</p>
-      <button class="delete-button" data-index="${index}">Delete</button>
-      <button class="edit-button" data-index="${index}">Edit</button> 
-    `;
-    animeList.appendChild(animeItem);
-  });
+// Event listener for file input change
+jsonFile.addEventListener("change", (event) => {
+  const file = event.target.files[0];
+  const reader = new FileReader();
 
-  // Add event listeners to delete buttons
-  const deleteButtons = animeList.querySelectorAll(".delete-button");
-  deleteButtons.forEach((button) => {
-    button.addEventListener("click", deleteAnime);
-  });
+  reader.onload = (event) => {
+    try {
+      animeData = JSON.parse(event.target.result);
+      updateAnimeList();
+    } catch (error) {
+      console.error("Error parsing JSON:", error);
+    }
+  };
 
-  // Add event listeners to edit buttons
-  const editButtons = animeList.querySelectorAll(".edit-button");
-  editButtons.forEach((button) => {
-    button.addEventListener("click", editAnime);
-  });
-}
+  reader.readAsText(file);
+});
 
-// Function to delete an anime
-function deleteAnime(event) {
-  const index = parseInt(event.target.dataset.index);
-  animeData.splice(index, 1);
-  saveAnimeData();
-  displayAnimeList(animeData);
-}
+// Event listener for download button
+downloadButton.addEventListener("click", () => {
+  const jsonData = JSON.stringify(animeData, null, 2); // Format JSON for readability
+  const blob = new Blob([jsonData], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
 
-// Function to edit an anime
-function editAnime(event) {
-  const index = parseInt(event.target.dataset.index);
-  const anime = animeData[index];
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "anime_data.json";
+  link.click();
 
-  // Create a form for editing the anime
-  const editForm = document.createElement("form");
-  editForm.innerHTML = `
-    <label for="editAnimeName">Name:</label>
-    <input type="text" id="editAnimeName" value="${anime.name}"><br>
-    <label for="editWatchedEpisodes">Watched Episodes:</label>
-    <input type="number" id="editWatchedEpisodes" value="${anime.watched}"><br>
-    <label for="editTotalEpisodes">Total Episodes:</label>
-    <input type="number" id="editTotalEpisodes" value="${anime.total}"><br>
-    <label for="editAnimeGenre">Genre:</label>
-    <input type="text" id="editAnimeGenre" value="${anime.genre}"><br>
-    <label for="editAnimeDescription">Description:</label>
-    <textarea id="editAnimeDescription">${anime.description}</textarea><br>
-    <button type="submit">Save Changes</button>
-  `;
-
-  // Replace the anime item with the edit form
-  animeList.replaceChild(editForm, event.target.parentElement);
-
-  // Add event listener to the edit form
-  editForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    // Get updated values from the form
-    const updatedName = document.getElementById("editAnimeName").value;
-    const updatedWatched = parseInt(
-      document.getElementById("editWatchedEpisodes").value
-    );
-    const updatedTotal = parseInt(
-      document.getElementById("editTotalEpisodes").value
-    );
-    const updatedGenre = document.getElementById("editAnimeGenre").value;
-    const updatedDescription = document.getElementById(
-      "editAnimeDescription"
-    ).value;
-
-    // Update the anime object in the data array
-    animeData[index] = {
-      name: updatedName,
-      watched: updatedWatched,
-      total: updatedTotal,
-      genre: updatedGenre,
-      description: updatedDescription,
-    };
-
-    // Save updated data to local storage
-    saveAnimeData(animeData);
-
-    // Update the displayed anime list
-    displayAnimeList(animeData);
-  });
-}
-
-// Save anime data to local storage
-function saveAnimeData() {
-  localStorage.setItem("animeData", JSON.stringify(animeData));
-}
-
-// Load anime data from local storage
-function loadAnimeData() {
-  const storedData = localStorage.getItem("animeData");
-  if (storedData) {
-    animeData = JSON.parse(storedData);
-    displayAnimeList(animeData);
-  }
-}
+  URL.revokeObjectURL(url); // Release the URL object
+});
