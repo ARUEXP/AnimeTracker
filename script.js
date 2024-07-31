@@ -53,13 +53,12 @@ function addAnime(anime) {
   buttonContainer.appendChild(editButton);
 
   // Append elements to the anime item
-  animeItem.appendChild(buttonContainer);
   animeItem.appendChild(animeName);
   animeItem.appendChild(watchedEpisodes);
   animeItem.appendChild(totalEpisodes);
   animeItem.appendChild(animeGenre);
   animeItem.appendChild(animeDescription);
-
+  animeItem.appendChild(buttonContainer);
   animeList.appendChild(animeItem);
 }
 
