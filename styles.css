@@ -130,7 +130,7 @@ button:hover {
   background-color: #dc3545; /* Example red background color */
   color: white;
   border: none;
-  border-radius: 50%; /* Make the button circular */
+  border-radius: 50px; /* Make the button circular */
   cursor: pointer;
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
