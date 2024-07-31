@@ -213,3 +213,16 @@ form label:nth-child(5),
 form label:nth-child(7) {
   text-align: left; /* Align the label text to the left */
 }
+
+/* Style for the anime item content */
+.anime-item > *:not(.delete-button):not(.edit-button) {
+  margin-bottom: 10px; /* Add margin to the bottom of content elements */
+}
+
+/* Align buttons with anime name */
+.anime-item h2,
+.delete-button,
+.edit-button {
+  display: inline-block; /* Make elements inline-block for better alignment */
+  vertical-align: top; /* Align elements to the top */
+}
