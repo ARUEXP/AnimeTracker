@@ -49,15 +49,52 @@ document.addEventListener("DOMContentLoaded", function () {
     editButton.classList.add("edit-button");
     editButton.textContent = "Edit";
     editButton.addEventListener("click", () => {
-      // Implement edit functionality (e.g., open a modal to edit anime details)
-      const index = animeData.indexOf(anime);
-      if (index !== -1) {
-        // ... (Get updated data from the edit form)
-        animeData[index] = {
-          // ... (Updated anime data)
-        };
-        updateAnimeList(); // Update the list after editing
-      }
+      // Open the edit modal
+      const editModal = document.getElementById("editAnimeModal");
+      editModal.style.display = "block";
+
+      // Populate the modal form with anime data
+      document.getElementById("editAnimeName").value = anime.name;
+      document.getElementById("editWatchedEpisodes").value =
+        anime.watchedEpisodes;
+      document.getElementById("editTotalEpisodes").value = anime.totalEpisodes;
+      document.getElementById("editAnimeGenre").value = anime.genre;
+      document.getElementById("editAnimeDescription").value = anime.description;
+
+      // Handle modal form submission
+      const editForm = document.getElementById("editAnimeForm");
+      editForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        // Get updated data from the modal form
+        const updatedName = document.getElementById("editAnimeName").value;
+        const updatedWatchedEpisodes = parseInt(
+          document.getElementById("editWatchedEpisodes").value
+        );
+        const updatedTotalEpisodes = parseInt(
+          document.getElementById("editTotalEpisodes").value
+        );
+        const updatedGenre = document.getElementById("editAnimeGenre").value;
+        const updatedDescription = document.getElementById(
+          "editAnimeDescription"
+        ).value;
+
+        // Update the anime data in the array
+        const index = animeData.indexOf(anime);
+        if (index !== -1) {
+          animeData[index] = {
+            name: updatedName,
+            watchedEpisodes: updatedWatchedEpisodes,
+            totalEpisodes: updatedTotalEpisodes,
+            genre: updatedGenre,
+            description: updatedDescription,
+          };
+          updateAnimeList(); // Update the list after editing
+        }
+
+        // Close the modal
+        editModal.style.display = "none";
+      });
     });
 
     // Append buttons to the container
@@ -77,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateAnimeList() {
     animeList.innerHTML = ""; // Clear the existing list
     animeData.forEach((anime) => addAnime(anime));
+    localStorage.setItem("animes", JSON.stringify(animeData)); // Save to local storage
   }
 
   // Event listener for form submission
@@ -150,4 +188,9 @@ document.addEventListener("DOMContentLoaded", function () {
       URL.revokeObjectURL(url); // Release the URL object
     });
   }
+
+  // Load animes from local storage on page load
+  window.addEventListener("load", () => {
+    updateAnimeList(); // Load animes from local storage
+  });
 });

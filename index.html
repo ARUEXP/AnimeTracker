@@ -6,59 +6,166 @@
     <title>Anime Tracker</title>
     <link rel="stylesheet" href="styles.css" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
   </head>
   <body>
     <div class="container">
-      <h1>AniTrack</h1>
+      <h1>Anime Tracker</h1>
+
       <form id="animeForm">
         <div class="input-grid">
-          <label for="animeName">Anime Name:</label>
-          <input type="text" id="animeName" placeholder="Anime Name" required />
-          <label for="watchedEpisodes">Watched Episodes:</label>
-          <input
-            type="number"
-            id="watchedEpisodes"
-            placeholder="Watched Episodes"
-            min="0"
-            required
-          />
-          <label for="totalEpisodes">Total Episodes:</label>
-          <input
-            type="number"
-            id="totalEpisodes"
-            placeholder="Total Episodes"
-            min="1"
-            required
-          />
-          <label for="animeGenre">Genre:</label>
-          <input type="text" id="animeGenre" placeholder="Genre" required />
+          <div>
+            <label for="animeName">Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="animeName"
+              placeholder="Enter anime name"
+              required
+            />
+          </div>
+          <div>
+            <label for="watchedEpisodes">Watched Episodes:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="watchedEpisodes"
+              placeholder="Enter watched episodes"
+              required
+            />
+          </div>
+          <div>
+            <label for="totalEpisodes">Total Episodes:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="totalEpisodes"
+              placeholder="Enter total episodes"
+              required
+            />
+          </div>
+          <div>
+            <label for="animeGenre">Genre:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="animeGenre"
+              placeholder="Enter genre"
+              required
+            />
+          </div>
         </div>
-        <textarea
-          id="animeDescription"
-          placeholder="Short Description"
-          required
-        ></textarea>
-        <button type="submit">Add Anime</button>
+        <div>
+          <label for="animeDescription">Description:</label>
+          <textarea
+            class="form-control"
+            id="animeDescription"
+            placeholder="Enter description"
+            rows="3"
+            required
+          ></textarea>
+        </div>
+        <div class="main-button-container">
+          <button type="submit" class="btn btn-primary">Add Anime</button>
+        </div>
       </form>
 
       <div class="import-download-buttons">
-        <input type="file" id="jsonFile" style="display: none" />
-        <button id="importJsonButton">Import JSON</button>
-        <button id="downloadButton">Download JSON</button>
+        <button id="importJsonButton" class="btn btn-secondary">
+          Import JSON
+        </button>
+        <input type="file" id="jsonFile" accept=".json" style="display: none" />
+        <button id="downloadButton" class="btn btn-secondary">
+          Download JSON
+        </button>
       </div>
 
       <div id="animeList" class="anime-list"></div>
     </div>
+
+    <!-- Edit Anime Modal -->
+    <div
+      class="modal fade"
+      id="editAnimeModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="editAnimeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editAnimeModalLabel">Edit Anime</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="editAnimeForm">
+              <div class="form-group">
+                <label for="editAnimeName">Name:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="editAnimeName"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="editWatchedEpisodes">Watched Episodes:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="editWatchedEpisodes"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="editTotalEpisodes">Total Episodes:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="editTotalEpisodes"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="editAnimeGenre">Genre:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="editAnimeGenre"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="editAnimeDescription">Description:</label>
+                <textarea
+                  class="form-control"
+                  id="editAnimeDescription"
+                  rows="3"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Save Changes
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
