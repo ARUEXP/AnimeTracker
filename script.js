@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const downloadButton = document.getElementById("downloadButton"); // Get the button after DOM is ready
   const jsonFile = document.getElementById("jsonFile"); // Get the file input after DOM is ready
 
-  let animeData = []; // Array to store anime data
+  let animeData = JSON.parse(localStorage.getItem("animes")) || []; // Array to store anime data
 
   // Function to add anime to the list
   function addAnime(anime) {
@@ -50,7 +50,14 @@ document.addEventListener("DOMContentLoaded", function () {
     editButton.textContent = "Edit";
     editButton.addEventListener("click", () => {
       // Implement edit functionality (e.g., open a modal to edit anime details)
-      console.log("Edit button clicked for anime:", anime);
+      const index = animeData.indexOf(anime);
+      if (index !== -1) {
+        // ... (Get updated data from the edit form)
+        animeData[index] = {
+          // ... (Updated anime data)
+        };
+        updateAnimeList(); // Update the list after editing
+      }
     });
 
     // Append buttons to the container
