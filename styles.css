@@ -133,7 +133,6 @@ button:hover {
   background-color: #0000;
   border-radius: 3em; /* Make the button circular */
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
   width: fit-content; /* Adjust width to fit content */
   display: inline-block; /* Make the buttons inline-block */
 }
@@ -166,7 +165,6 @@ button:hover {
   background-color: #0000;
   border-radius: 3em; /* Make the button circular */
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
   width: fit-content; /* Adjust width to fit content */
   display: inline-block; /* Make the buttons inline-block */
 }
