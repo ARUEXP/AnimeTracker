@@ -57,7 +57,7 @@ form {
 
 .main-button-container button {
   margin: 0 1em; /* Adjust the margin as needed */
-  padding: 10px 20px;
+  padding: 1em;
   border-radius: 0.5em; /* More rounded corners */
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
@@ -67,7 +67,7 @@ textarea,
 button {
   padding: 1em; /* Increased padding */
   border: 1px solid #ddd;
-  border-radius: 6px; /* Rounded corners */
+  border-radius: 0.5em; /* Rounded corners */
   width: 100%; /* Make input fields take full width */
 }
 
@@ -91,22 +91,22 @@ button:hover {
 }
 
 .anime-list {
-  margin-top: 30px;
-  gap: 35px; /* Increased spacing between anime items */
+  margin-top: 3em;
+  gap: 3em; /* Increased spacing between anime items */
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
     minmax(250px, 1fr)
   ); /* Responsive grid layout */
-  gap: 20px; /* Spacing between grid items */
+  gap: 1em; /* Spacing between grid items */
 }
 
 .anime-item {
   display: flex;
   flex-direction: column; /* Back to column direction */
-  padding: 20px;
+  padding: 1em;
   border: 1px solid #ddd;
-  border-radius: 8px; /* More rounded corners */
+  border-radius: 0.5em; /* More rounded corners */
   background-color: #f8f8f8; /* Lighter background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More prominent shadow */
 }
