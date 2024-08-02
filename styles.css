@@ -344,6 +344,7 @@ form > *:nth-child(-n + 4) label {
 /* Style for the close button when clicked */
 #editAnimeModal textarea {
   width: calc(100vw - 5em); /* Adjust the width */
+  height: 100%;
   resize: none; /* Disable resizing */
   padding: 1em;
   height: 100%;
