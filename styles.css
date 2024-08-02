@@ -29,7 +29,6 @@ body {
 }
 
 .container {
-  width: 100vw;
   padding: 1em; /* Increased padding */
   background: white;
   border-radius: 1em; /* More rounded corners */
