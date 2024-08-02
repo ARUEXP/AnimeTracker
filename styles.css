@@ -228,7 +228,7 @@ button:hover {
   .main-button-container {
     display: flex;
     flex-direction: column; /* Stack buttons vertically */
-    align-items: flex-end; /* Align buttons to the right */
+    align-items: center; /* Align buttons to the center */
   }
 
   .main-delete-button,
