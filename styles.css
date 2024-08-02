@@ -205,10 +205,6 @@ button:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .container {
-    width: 95%;
-  }
-
   .anime-list {
     grid-template-columns: 1fr; /* Adjust grid column width for smaller screens */
   }
