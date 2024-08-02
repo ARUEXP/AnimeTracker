@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anime Tracker</title>
+    <title>Show Tracker</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Anime Tracker</h1>
+      <h1>Show Tracker</h1>
 
       <form id="animeForm">
         <div class="input-grid">
@@ -18,7 +18,7 @@
               type="text"
               class="form-control"
               id="animeName"
-              placeholder="Enter anime name"
+              placeholder="Enter Name"
               required
             />
           </div>
@@ -28,7 +28,7 @@
               type="number"
               class="form-control"
               id="watchedEpisodes"
-              placeholder="Enter watched episodes"
+              placeholder="Enter Watched Episodes"
               required
             />
           </div>
@@ -38,7 +38,7 @@
               type="number"
               class="form-control"
               id="totalEpisodes"
-              placeholder="Enter total episodes"
+              placeholder="Enter Total Episodes"
               required
             />
           </div>
@@ -48,7 +48,7 @@
               type="text"
               class="form-control"
               id="animeGenre"
-              placeholder="Enter genre"
+              placeholder="Enter Genre"
               required
             />
           </div>
@@ -58,13 +58,13 @@
           <textarea
             class="form-control"
             id="animeDescription"
-            placeholder="Enter description"
+            placeholder="Enter Description"
             rows="3"
             required
           ></textarea>
         </div>
         <div class="main-button-container">
-          <button type="submit" class="btn btn-primary">Add Anime</button>
+          <button type="submit" class="btn btn-primary">Save Details</button>
         </div>
       </form>
 
@@ -74,14 +74,14 @@
         </button>
         <input type="file" id="jsonFile" accept=".json" style="display: none" />
         <button id="downloadButton" class="btn btn-secondary">
-          Download JSON
+          Download Data
         </button>
       </div>
 
       <div id="animeList" class="anime-list"></div>
     </div>
 
-    <!-- Edit Anime Modal -->
+    <!-- Edit Modal -->
     <div
       class="modal fade"
       id="editAnimeModal"
@@ -93,7 +93,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="editAnimeModalLabel">Edit Anime</h5>
+            <h5 class="modal-title" id="editAnimeModalLabel">Edit Data</h5>
             <button
               type="button"
               class="close"
