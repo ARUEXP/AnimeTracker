@@ -116,7 +116,7 @@ button:hover {
 }
 
 .anime-item p {
-  margin: 8px 0;
+  margin: 0.5em 0;
 }
 
 /* Buttons within anime items */
@@ -124,14 +124,14 @@ button:hover {
   display: flex;
   align-items: center; /* Align items vertically */
   position: relative;
-  right: 10px;
+  right: 1em;
 }
 
 /* Main buttons */
 .main-delete-button,
 .main-edit-button {
   background-color: #0000;
-  border-radius: 50px; /* Make the button circular */
+  border-radius: 3em; /* Make the button circular */
   cursor: pointer;
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
   width: fit-content; /* Adjust width to fit content */
@@ -150,7 +150,7 @@ button:hover {
 }
 
 .main-edit-button {
-  margin-left: 10px;
+  margin-left: 1em;
   border: 1px solid #000;
   color: #000;
 }
@@ -164,7 +164,7 @@ button:hover {
 .anime-item-delete-button,
 .anime-item-edit-button {
   background-color: #0000;
-  border-radius: 50px; /* Make the button circular */
+  border-radius: 3em; /* Make the button circular */
   cursor: pointer;
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
   width: fit-content; /* Adjust width to fit content */
@@ -183,7 +183,7 @@ button:hover {
 }
 
 .anime-item-edit-button {
-  margin-left: 10px;
+  margin-left: 1em;
   border: 1px solid #000;
   color: #000;
 }
@@ -197,7 +197,7 @@ button:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 10px;
+  gap: 0.6em;
 }
 
 /* Responsive Design */
@@ -226,7 +226,7 @@ button:hover {
 
   .main-delete-button,
   .main-edit-button {
-    margin-bottom: 5px; /* Add space between buttons */
+    margin-bottom: 0.5em; /* Add space between buttons */
   }
 }
 
@@ -257,7 +257,7 @@ form label:nth-child(7) {
 
 /* Style for the anime item content */
 .anime-item > *:not(.anime-item-delete-button):not(.anime-item-edit-button) {
-  margin-bottom: 10px; /* Add margin to the bottom of content elements */
+  margin-bottom: 1em; /* Add margin to the bottom of content elements */
 }
 
 /* Align buttons with anime name */
@@ -268,23 +268,23 @@ form label:nth-child(7) {
 }
 
 .anime-item-delete-button {
-  right: 10px; /* Position the button to the right */
+  right: 1em; /* Position the button to the right */
 }
 
 .anime-item-edit-button {
-  margin-left: 10px;
-  right: 60px; /* Position the button to the right */
+  margin-left: 1em;
+  right: 4em; /* Position the button to the right */
 }
 
 /* Center the import and download buttons */
 .import-download-buttons {
   display: flex;
   justify-content: center; /* Center horizontally */
-  margin-top: 20px; /* Add some top margin */
+  margin-top: 1em; /* Add some top margin */
 }
 
 .import-download-buttons button {
-  margin: 0 10px; /* Add some space between buttons */
+  margin: 0 1em; /* Add some space between buttons */
 }
 
 /* Shrink the first four form elements and titles */
