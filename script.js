@@ -80,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Show the modal
     const editAnimeModal = document.getElementById("editAnimeModal");
     editAnimeModal.style.display = "block";
+    //the close button in the modal is not working
   }
 
   // Function to update anime data in the array
