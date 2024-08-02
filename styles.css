@@ -2,13 +2,14 @@
 @font-face {
   font-family: "LemonMilk";
   src: url("LEMONMILK-Light.otf");
-  font-weight: normal;
 }
 
 * {
   font-family: "LemonMilk";
   box-sizing: border-box; /* Include padding and border in element's total width and height */
   transition-duration: 0.6s;
+  padding: 0;
+  margin: 0;
 }
 
 /* Hide the scrollbar track */
@@ -24,31 +25,26 @@
 
 body {
   background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Hide horizontal scrollbar */
-  color: #333; /* Set default text color */
+  padding: 1em;
 }
 
 .container {
-  width: 90%;
-  margin: 1em auto; /* Increased top margin */
+  width: 100vw;
   padding: 1em; /* Increased padding */
-  padding-top: 0.1em;
   background: white;
-  border-radius: 12px; /* More rounded corners */
+  border-radius: 1em; /* More rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More prominent shadow */
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 20px; /* Increased space below the heading */
+  margin-bottom: 1em; /* Increased space below the heading */
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 25px; /* Increased spacing between form fields */
+  gap: 1em; /* Increased spacing between form fields */
   /* Center the form content */
   align-items: center;
 }
@@ -57,20 +53,20 @@ form {
 .main-button-container {
   display: flex;
   justify-content: center; /* Center the buttons */
-  margin-top: 30px; /* Adjust the margin as needed */
+  margin-top: 2em; /* Adjust the margin as needed */
 }
 
 .main-button-container button {
-  margin: 0 15px; /* Adjust the margin as needed */
+  margin: 0 1em; /* Adjust the margin as needed */
   padding: 10px 20px;
-  border-radius: 8px; /* More rounded corners */
+  border-radius: 0.5em; /* More rounded corners */
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
 input,
 textarea,
 button {
-  padding: 12px 15px; /* Increased padding */
+  padding: 1em; /* Increased padding */
   border: 1px solid #ddd;
   border-radius: 6px; /* Rounded corners */
   width: 100%; /* Make input fields take full width */
@@ -353,8 +349,7 @@ form > *:nth-child(-n + 4) label {
 /* Style for the close button when clicked */
 #editAnimeModal textarea {
   width: calc(100vw - 5em); /* Adjust the width */
-  height: 100%; /* Use 100% of modal height, subtract 6em for padding and title */
   resize: none; /* Disable resizing */
-  padding: 1em; /* Add some padding */
-  margin-bottom: -1em; /* Add some margin at the bottom */
+  padding: 1em;
+  height: 100%;
 }
