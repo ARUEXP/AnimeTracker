@@ -346,5 +346,5 @@ form > *:nth-child(-n + 4) label {
 
 /* Style for the close button when hovered */
 #editAnimeModal .close:hover {
-  background-color: #0056b3;
+  background-color: #ff3c00;
 }
