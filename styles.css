@@ -321,18 +321,26 @@ form > *:nth-child(-n + 4) label {
 
 /* Style for the close button in the edit anime form */
 #editAnimeModal .close {
-  aspect-ratio: 1/1;
   position: absolute; /* Position the button absolutely */
-  right: 1em;
+  margin-top: -0.45em;
+  padding: 0;
+  padding-top: -0.5em;
+  right: 16px;
   top: 1em; /* Position it at the top */
-  width: 2em;
+  width: 1.5em;
+  height: 1.5em;
   background-color: transparent; /* Transparent background */
   border: none; /* Remove border */
   cursor: pointer; /* Set cursor to pointer */
-  padding: 5px; /* Add some padding */
-  font-size: 1.2em; /* Increase font size */
+  font-size: 1.6em; /* Increase font size */
   color: #ffffff; /* Set text color */
   background-color: #0056b3;
+}
+
+#editAnimeModal .modal-title {
+  font-size: larger;
+  margin-top: 0.8em;
+  margin-bottom: 0.5em;
 }
 
 /* Style for the close button when hovered */
