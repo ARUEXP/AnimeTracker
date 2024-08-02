@@ -33,7 +33,7 @@ body {
 .container {
   width: 90%;
   margin: 1em auto; /* Increased top margin */
-  padding: 0 1em; /* Increased padding */
+  padding: 1em; /* Increased padding */
   padding-top: 0.1em;
   background: white;
   border-radius: 12px; /* More rounded corners */
