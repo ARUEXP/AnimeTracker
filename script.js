@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const importJsonButton = document.getElementById("importJsonButton"); // Get the button after DOM is ready
   const downloadButton = document.getElementById("downloadButton"); // Get the button after DOM is ready
   const jsonFile = document.getElementById("jsonFile"); // Get the file input after DOM is ready
+  const editAnimeModal = document.getElementById("editAnimeModal"); // Get the modal element
 
   let animeData = JSON.parse(localStorage.getItem("animes")) || []; // Array to store anime data
 
@@ -78,14 +79,19 @@ document.addEventListener("DOMContentLoaded", function () {
       animeData.description;
 
     // Show the modal
-    const editAnimeModal = document.getElementById("editAnimeModal");
     editAnimeModal.style.display = "block";
-    //the close button in the modal is not working
+    window.animeBeingEdited = animeData;
+  }
+
+  // Function to close the Edit Anime Modal
+  function closeEditAnimeModal() {
+    editAnimeModal.style.display = "none";
   }
 
   // Function to update anime data in the array
   function updateAnimeData(updatedAnime) {
-    const index = animeData.indexOf(updatedAnime);
+    // Find the index of the anime being edited
+    const index = animeData.indexOf(window.animeBeingEdited); // Use the global variable
     if (index !== -1) {
       // Update the anime data in the array
       animeData[index] = updatedAnime;
@@ -179,6 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Event listener for the "Save Changes" button in the modal
+  // Event listener for the "Save Changes" button in the modal
   const editAnimeForm = document.getElementById("editAnimeForm");
   if (editAnimeForm) {
     editAnimeForm.addEventListener("submit", (event) => {
@@ -201,8 +208,20 @@ document.addEventListener("DOMContentLoaded", function () {
       updateAnimeData(updatedAnimeData);
 
       // Close the modal
-      const editAnimeModal = document.getElementById("editAnimeModal");
-      editAnimeModal.style.display = "none";
+      closeEditAnimeModal();
     });
   }
+
+  // Add event listeners for closing the modal
+  const closeButton = editAnimeModal.querySelector(".close");
+  if (closeButton) {
+    closeButton.addEventListener("click", closeEditAnimeModal);
+  }
+
+  // Add event listener for clicking outside the modal
+  editAnimeModal.addEventListener("click", (event) => {
+    if (event.target === editAnimeModal) {
+      closeEditAnimeModal();
+    }
+  });
 });
