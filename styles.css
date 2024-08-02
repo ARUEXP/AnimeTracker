@@ -31,8 +31,9 @@ body {
 
 .container {
   width: 90%;
-  margin: 20px auto; /* Increased top margin */
-  padding: 20px; /* Increased padding */
+  margin: 1em auto; /* Increased top margin */
+  padding: 0 1em; /* Increased padding */
+  padding-top: 0.1em;
   background: white;
   border-radius: 12px; /* More rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More prominent shadow */
@@ -315,4 +316,22 @@ form > *:nth-child(-n + 4) label {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+/* Style for the close button in the edit anime form */
+#editAnimeModal .close-button {
+  position: absolute; /* Position the button absolutely */
+  top: 10px; /* Position it at the top */
+  right: 10px; /* Position it to the right */
+  background-color: transparent; /* Transparent background */
+  border: none; /* Remove border */
+  cursor: pointer; /* Set cursor to pointer */
+  padding: 5px; /* Add some padding */
+  font-size: 1.2em; /* Increase font size */
+  color: #333; /* Set text color */
+}
+
+/* Style for the close button when hovered */
+#editAnimeModal .close-button:hover {
+  color: #f00; /* Change text color on hover */
 }
