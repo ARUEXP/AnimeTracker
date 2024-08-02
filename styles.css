@@ -8,6 +8,7 @@
 * {
   font-family: "LemonMilk";
   box-sizing: border-box; /* Include padding and border in element's total width and height */
+  transition-duration: 600ms;
 }
 
 /* Hide the scrollbar track */
@@ -334,7 +335,7 @@ form > *:nth-child(-n + 4) label {
   cursor: pointer; /* Set cursor to pointer */
   font-size: 1.6em; /* Increase font size */
   color: #ffffff; /* Set text color */
-  background-color: #0056b3;
+  background-color: #007bff;
 }
 
 #editAnimeModal .modal-title {
@@ -345,5 +346,5 @@ form > *:nth-child(-n + 4) label {
 
 /* Style for the close button when hovered */
 #editAnimeModal .close:hover {
-  color: #f00; /* Change text color on hover */
+  background-color: #0056b3;
 }
